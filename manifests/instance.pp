@@ -375,7 +375,7 @@ define webapp::instance(
     $real_db_pass = pick($db_pass, $real_db_user)
 
     validate_slength($real_db_name, 64)
-    validate_slength($real_db_user, 16)
+    validate_slength($real_db_user, 64)
 
     @@mysql::db { "${name}-${real_db_name}":
       ensure   => $db_ensure,
